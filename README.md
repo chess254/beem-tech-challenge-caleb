@@ -48,3 +48,15 @@ Elevator B is on first floor moving upwards with 10 passengers
 Elevator C and D are idle on 4th and 3rd floor respectively.
 9. To view elevator movement tracking,  visit:
     [http://localhost:8082/elevatormovements](http://localhost:8082/elevatormovements)  This will list all movements for all elevators.  [http://localhost:8082/elevatormovements/A](http://localhost:8082/elevatormovements/A)  will only list movements of elevator A.
+
+10. There are 4 endpoints (I added 2 more to aid in visualization)
+
+GET `localhost:/8082/elevators`
+
+GET `localhost:/8082/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
+*(floorNo ->pickup floor, toFloor -> destination floor, noOfPeople -> number of passengers)*
+
+GET `localhost:/8082/elevatormovements` *fetches movements of all elevators*
+
+GET `localhost:/8082/elevatormovements/{elevatorID}` *
+replace elevatorID with A,B,C or D fetches movements for a specific elevator*
