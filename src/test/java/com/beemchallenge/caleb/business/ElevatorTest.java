@@ -5,11 +5,13 @@ import static org.junit.Assert.*;
 import com.beemchallenge.caleb.model.ElevatorStatus;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.beemchallenge.caleb.business.exception.ElevatorException;
+import org.springframework.boot.test.context.SpringBootTest;
 
 @RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
 public class ElevatorTest {
 
 	@Test
