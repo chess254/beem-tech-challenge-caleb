@@ -35,7 +35,7 @@
 6. Run  `mvn package`  to build, unit test and package it.  ElevatorMonitor.jar will be generated in target folder.
 
 
-7. How to run From command line console, go to ElevatorApplication folder. Run following command java  `-jar target/ElevatorMonitor.jar  --server.port=8080` This will start the application and listen on port 8082.  You can change the port if it is used by other application.
+7. How to run From command line console, go to ElevatorApplication folder. Run following command java  `-jar target/ElevatorMonitor.jar  --server.port=8080` This will start the application and listen on port 8080.  You can change the port if it is used by other application.
 
 
 
@@ -53,10 +53,10 @@ Elevator C and D are idle on 4th and 3rd floor respectively.
 
 GET `localhost:/8080/elevators`
 
-GET `localhost:/8000/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
+GET `localhost:/8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
 *({floorNo} ->pickup floor, {toFloor} -> destination floor, {noOfPeople} -> number of passengers)*
 
-GET `localhost:/8000/elevatormovements` *fetches movements of all elevators*
+GET `localhost:/8080/elevatormovements` *fetches movements of all elevators*
 
 GET `localhost:/8080/elevatormovements/{elevatorID}` *
 replace elevatorID with A,B,C or D fetches movements for a specific elevator*
