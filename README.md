@@ -61,7 +61,7 @@ GET [`localhost:/8080/elevatormovements`](localhost:/8080/elevatormovements) *fe
 GET [`localhost:/8080/elevatormovements/{elevatorID}`](localhost:/8080/elevatormovements/{elevatorID}) *
 replace elevatorID with A,B,C or D fetches movements for a specific elevator*
 
-All the elevator events are stored in an in-memory sql database, h2 which can be accessed on localhost:8080/h2-console   (JDBC URL: `jdbc:h2:mem:testdb`, username: `sa`, no password)
+All the elevator events are stored in an in-memory sql database, h2 which can be accessed on [`localhost:8080/h2-console`](localhost:8080/h2-console)   (JDBC URL: `jdbc:h2:mem:testdb`, username: `sa`, no password)
 ![Screenshot254.png](src%2Fmain%2Fresources%2Fstatic%2Fdatabase.png)
 
 All events are also logged to the console.
