@@ -47,13 +47,13 @@ Elevator A is on 10th floor with 3 passengers moving downwards
 Elevator B is on first floor moving upwards with 10 passengers
 Elevator C and D are idle on 4th and 3rd floor respectively.
 9. To view elevator movement tracking,  visit:
-    [`http://localhost:8080/elevatormovements`](http://localhost:8080/elevatormovements)  This will list all movements for all elevators.  [http://localhost:8080/elevatormovements/A](http://localhost:8080/elevatormovements/A)  will only list movements of elevator A.
+    [`http://localhost:8080/elevatormovements`](http://localhost:8080/elevatormovements)  This will list all movements for all elevators.  [`http://localhost:8080/elevatormovements/A`](http://localhost:8080/elevatormovements/A)(http://localhost:8080/elevatormovements/A)  will only list movements of elevator A.
 
 10. There are 4 endpoints (I added 2 more to aid in visualization )  NB: replace 8080 with local port
 
 GET [`localhost:/8080/elevators`](localhost:/8080/elevators)
 
-GET [`localhost:/8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople}`](localhost:/8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople}) *calls closest elevator and transports clients to selected floor*
+GET [`localhost:8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople}`](localhost:8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople}) *calls closest elevator and transports clients to selected floor*
 *({floorNo} ->pickup floor, {toFloor} -> destination floor, {noOfPeople} -> number of passengers)*
 
 GET [`localhost:/8080/elevatormovements`](localhost:/8080/elevatormovements) *fetches movements of all elevators*
