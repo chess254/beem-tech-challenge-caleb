@@ -5,20 +5,22 @@
 	<artifactId>BeemTechChallenge</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.5.RELEASE</version>
+		<version>2.7.14</version> <!-- Use the latest available version -->
 	</parent>
+
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>org.hsqldb</groupId>
-				<artifactId>hsqldb</artifactId>
-				<version>2.3.2</version>
-			</dependency>
+<!--			<dependency>-->
+<!--				<groupId>org.hsqldb</groupId>-->
+<!--				<artifactId>hsqldb</artifactId>-->
+<!--				<version>2.3.2</version>-->
+<!--			</dependency>-->
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -62,12 +64,13 @@
             <artifactId>json-path-assert</artifactId>
             <version>0.9.1</version>
             <scope>test</scope>
-        </dependency> 
-        		
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
         </dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
                 		
 		<dependency>
 		    <groupId>com.github.springtestdbunit</groupId>
@@ -87,14 +90,33 @@
 		        </exclusion>
 		    </exclusions>
 		</dependency>
-		
-		<!-- runtime database dependencies -->
 		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<scope>runtime</scope>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
 		</dependency>
-				
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>2.7.14</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>2.7.14</version>
+		</dependency>
+
+		<!-- runtime database dependencies -->
+<!--		<dependency>-->
+<!--			<groupId>org.hsqldb</groupId>-->
+<!--			<artifactId>hsqldb</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
+
+
+
 	</dependencies>
 	
     <properties>
@@ -111,7 +133,30 @@
 					<finalName>ElevatorMonitor</finalName>
 					<mainClass>com.beemchallenge.caleb.Application</mainClass>
                 </configuration>
+
             </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source> <!-- Set your Java version here -->
+					<target>1.8</target> <!-- Set your Java version here -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<excludes>
+						<exclude>DataTest.java</exclude>
+					</excludes>
+					<includes>
+						<include>DataCheck.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 		

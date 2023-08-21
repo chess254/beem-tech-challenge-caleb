@@ -35,11 +35,11 @@
 6. Run  `mvn package`  to build, unit test and package it.  ElevatorMonitor.jar will be generated in target folder.
 
 
-7. How to run From command line console, go to ElevatorApplication folder. Run following command java  -jar target/ElevatorMonitor.jar  --server.port=8082 This will start the application and listen on port 8082.  You can change the port if it is used by other application.
+7. How to run From command line console, go to ElevatorApplication folder. Run following command java  `-jar target/ElevatorMonitor.jar  --server.port=8080` This will start the application and listen on port 8082.  You can change the port if it is used by other application.
 
 
 
-8. How to test In a browser(Firefox or Chrome), visit  [http://localhost:8082/](http://localhost:8082/)  Type in the number of people and select the level you want to go. You will see the movement of number in elevator column. The movement happens every 5 seconds and 2 seconds are allowed for elevator to open and close. Green number means the elevator is idle. Red means it is doing a job. An upward is displayed for elevator moving up and downward arrow indicates elevator is moving down, square indicates the elevator is stagnant. see images below
+8. How to test In a browser(Firefox or Chrome), visit  [`http://localhost:8080`](http://localhost:8080)  <br> Type in the number of people and select the level you want to go. <br>You will see the movement of number in elevator column. <br>The movement happens every 5 seconds and 2 seconds are allowed for elevator to open and close. <br>Number besides square/arrow indicates number of people in an elevator. <br>Red means elevator is in motion. An upward arrow is displayed for elevator moving up and downward arrow indicates elevator is moving down, square indicates the elevator is stagnant. *see image below*
 
 ![screenshot.png](src%2Fmain%2Fresources%2Fstatic%2Fscreenshot.png)
 in this sample image, there are 4 elevators A,B,C,D 
@@ -47,16 +47,25 @@ Elevator A is on 10th floor with 3 passengers moving downwards
 Elevator B is on first floor moving upwards with 10 passengers
 Elevator C and D are idle on 4th and 3rd floor respectively.
 9. To view elevator movement tracking,  visit:
-    [http://localhost:8082/elevatormovements](http://localhost:8082/elevatormovements)  This will list all movements for all elevators.  [http://localhost:8082/elevatormovements/A](http://localhost:8082/elevatormovements/A)  will only list movements of elevator A.
+    [`http://localhost:8080/elevatormovements`](http://localhost:8080/elevatormovements)  This will list all movements for all elevators.  [http://localhost:8080/elevatormovements/A](http://localhost:8080/elevatormovements/A)  will only list movements of elevator A.
 
-10. There are 4 endpoints (I added 2 more to aid in visualization)  NB: replace 8082 with local port
+10. There are 4 endpoints (I added 2 more to aid in visualization )  NB: replace 8080 with local port
 
-GET `localhost:/8082/elevators`
+GET `localhost:/8080/elevators`
 
-GET `localhost:/8082/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
-*(floorNo ->pickup floor, toFloor -> destination floor, noOfPeople -> number of passengers)*
+GET `localhost:/8002/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
+*({floorNo} ->pickup floor, {toFloor} -> destination floor, {noOfPeople} -> number of passengers)*
 
-GET `localhost:/8082/elevatormovements` *fetches movements of all elevators*
+GET `localhost:/8002/elevatormovements` *fetches movements of all elevators*
 
-GET `localhost:/8082/elevatormovements/{elevatorID}` *
+GET `localhost:/8080/elevatormovements/{elevatorID}` *
 replace elevatorID with A,B,C or D fetches movements for a specific elevator*
+
+All the elevator events are stored in an in-memory sql database, h2 which can be accessed on localhost:8080/h2-console   (JDBC URL: `jdbc:h2:mem:testdb`, username: `sa`, no password)
+![Screenshot254.png](src%2Fmain%2Fresources%2Fstatic%2Fdatabase.png)
+
+All events are also logged to the console.
+
+The elevators move concurrently and asynchronously.
+
+Tests are in the src/test/package. 

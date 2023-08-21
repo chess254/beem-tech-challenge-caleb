@@ -9,7 +9,7 @@ import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.beemchallenge.caleb.business.exception.ElevatorException;
 import com.beemchallenge.caleb.repository.ElevatorMovementRepository;
