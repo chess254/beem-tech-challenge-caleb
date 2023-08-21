@@ -38,11 +38,13 @@
 7. How to run From command line console, go to ElevatorApplication folder. Run following command java  -jar target/ElevatorMonitor.jar  --server.port=8082 This will start the application and listen on port 8082.  You can change the port if it is used by other application.
 
 
-8. In ElevatorApplication folder, there are two files `build.bat.txt` and `run.bat.tx`t. If you use Windows, rename these files to build.bat and run.bat, change `JAVA_HOME` and `M2_HOME` in these files to point to your JDK and MAVEN folder. Then run build.bat to build and run.bat to start the application.
 
+8. How to test In a browser(Firefox or Chrome), visit  [http://localhost:8082/](http://localhost:8082/)  Type in the number of people and select the level you want to go. You will see the movement of number in elevator column. The movement happens every 5 seconds and 2 seconds are allowed for elevator to open and close. Green number means the elevator is idle. Red means it is doing a job. An upward is displayed for elevator moving up and downward arrow indicates elevator is moving down, square indicates the elevator is stagnant. see images below
 
-9. How to test In a browser(Firefox or Chrome), visit  [http://localhost:8082/](http://localhost:8082/)  Type in the number of people and select the level you want to go. You will see the movement of number in elevator column. The movement happens every 5 seconds and 2 seconds are allowed for elevator to open and close. Green number means the elevator is idle. Red means it is doing a job. `/\` is displayed for elevator moving up and `V` is indicates elevator is moving down, `-` indicates the elevator is stagnant. see images below
-
-
-10. To view elevator movement tracking,  visit:
+![screenshot.png](src%2Fmain%2Fresources%2Fstatic%2Fscreenshot.png)
+in this sample image, there are 4 elevators A,B,C,D 
+Elevator A is on 10th floor with 3 passengers moving downwards
+Elevator B is on first floor moving upwards with 10 passengers
+Elevator C and D are idle on 4th and 3rd floor respectively.
+9. To view elevator movement tracking,  visit:
     [http://localhost:8082/elevatormovements](http://localhost:8082/elevatormovements)  This will list all movements for all elevators.  [http://localhost:8082/elevatormovements/A](http://localhost:8082/elevatormovements/A)  will only list movements of elevator A.
