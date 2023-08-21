@@ -49,7 +49,7 @@ Elevator C and D are idle on 4th and 3rd floor respectively.
 9. To view elevator movement tracking,  visit:
     [http://localhost:8082/elevatormovements](http://localhost:8082/elevatormovements)  This will list all movements for all elevators.  [http://localhost:8082/elevatormovements/A](http://localhost:8082/elevatormovements/A)  will only list movements of elevator A.
 
-10. There are 4 endpoints (I added 2 more to aid in visualization)
+10. There are 4 endpoints (I added 2 more to aid in visualization)  NB: replace 8082 with local port
 
 GET `localhost:/8082/elevators`
 
