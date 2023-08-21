@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.beemchallenge.caleb.controller.ElevatorMovementControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.238 sec - in com.beemchallenge.caleb.controller.ElevatorMovementControllerTest
