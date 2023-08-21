@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import com.beemchallenge.caleb.business.Elevator;
 import com.beemchallenge.caleb.business.Task;

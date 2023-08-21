@@ -54,9 +54,18 @@ Elevator C and D are idle on 4th and 3rd floor respectively.
 GET `localhost:/8082/elevators`
 
 GET `localhost:/8082/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
-*(floorNo ->pickup floor, toFloor -> destination floor, noOfPeople -> number of passengers)*
+*({floorNo} ->pickup floor, {toFloor} -> destination floor, {noOfPeople} -> number of passengers)*
 
 GET `localhost:/8082/elevatormovements` *fetches movements of all elevators*
 
 GET `localhost:/8082/elevatormovements/{elevatorID}` *
 replace elevatorID with A,B,C or D fetches movements for a specific elevator*
+
+All the elevator events are stored in an in-memory sql database, h2 which can be accessed on localhost:8081/h2-console   (username: sa, no password)
+![Screenshot254.png](src%2Fmain%2Fresources%2Fstatic%2Fdatabase.png)
+
+All events are also logged to the console.
+
+The elevators move concurrently and asynchronously.
+
+Tests are in the src/test/package. 
