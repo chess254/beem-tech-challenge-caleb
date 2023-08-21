@@ -51,14 +51,14 @@ Elevator C and D are idle on 4th and 3rd floor respectively.
 
 10. There are 4 endpoints (I added 2 more to aid in visualization )  NB: replace 8080 with local port
 
-GET `localhost:/8080/elevators`
+GET [`localhost:/8080/elevators`](localhost:/8080/elevators)
 
-GET `localhost:/8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
+GET [`localhost:/8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople}`](localhost:/8080/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople}) *calls closest elevator and transports clients to selected floor*
 *({floorNo} ->pickup floor, {toFloor} -> destination floor, {noOfPeople} -> number of passengers)*
 
-GET `localhost:/8080/elevatormovements` *fetches movements of all elevators*
+GET [`localhost:/8080/elevatormovements`](localhost:/8080/elevatormovements) *fetches movements of all elevators*
 
-GET `localhost:/8080/elevatormovements/{elevatorID}` *
+GET [`localhost:/8080/elevatormovements/{elevatorID}`](localhost:/8080/elevatormovements/{elevatorID}) *
 replace elevatorID with A,B,C or D fetches movements for a specific elevator*
 
 All the elevator events are stored in an in-memory sql database, h2 which can be accessed on localhost:8080/h2-console   (JDBC URL: `jdbc:h2:mem:testdb`, username: `sa`, no password)
