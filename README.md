@@ -35,7 +35,7 @@
 6. Run  `mvn package`  to build, unit test and package it.  ElevatorMonitor.jar will be generated in target folder.
 
 
-7. How to run From command line console, go to ElevatorApplication folder. Run following command java  `-jar target/ElevatorMonitor.jar  --server.port=8080` This will start the application and listen on port 8082.  You can change the port if it is used by other application.
+7. How to run From command line console, go to ElevatorApplication folder. Run following command `java -jar target/ElevatorMonitor.jar --server.port=8080` This will start the application and listen on port 8082.  You can change the port if it is used by other application.
 
 
 
