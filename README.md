@@ -53,10 +53,10 @@ Elevator C and D are idle on 4th and 3rd floor respectively.
 
 GET `localhost:/8080/elevators`
 
-GET `localhost:/8002/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
+GET `localhost:/8000/elevators/floorNo/{floorNo}/toFloorNo/{toFloorNo}/noOfPeople/{noOfPeople`} *calls closest elevator and transports clients to selected floor*
 *({floorNo} ->pickup floor, {toFloor} -> destination floor, {noOfPeople} -> number of passengers)*
 
-GET `localhost:/8002/elevatormovements` *fetches movements of all elevators*
+GET `localhost:/8000/elevatormovements` *fetches movements of all elevators*
 
 GET `localhost:/8080/elevatormovements/{elevatorID}` *
 replace elevatorID with A,B,C or D fetches movements for a specific elevator*
